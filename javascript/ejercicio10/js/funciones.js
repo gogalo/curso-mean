@@ -1,0 +1,3 @@
+function checkEsPalindromo(str) {
+    // todo ....
+}
