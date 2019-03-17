@@ -28,15 +28,15 @@ db.clientes.insert({
     'tipoDeCliente': 'empresa',
     'facturas': [
         {
-            'fechaEmision': new Date(2019,00,01),
+            'fechaEmision': new Date("2019-01-01"),
             'importeTotal': 120.50
         },
         {
-            'fechaEmision': new Date(2019,01,01),
+            'fechaEmision': new Date("2019-02-01"),
             'importeTotal': 118.50
         },
         {
-            'fechaEmision': new Date(2019,02,01),
+            'fechaEmision': new Date("2019-03-01"),
             'importeTotal': 110.70
         }
     ]
@@ -64,15 +64,15 @@ db.clientes.insert({
     'tipoDeCliente': 'empresa',
     'facturas': [
         {
-            'fechaEmision': new Date(2019,01,01),
+            'fechaEmision': new Date("2019-01-01"),
             'importeTotal': 90.50
         },
         {
-            'fechaEmision': new Date(2019,02,01),
+            'fechaEmision': new Date("2019-02-01"),
             'importeTotal': 78.60
         },
         {
-            'fechaEmision': new Date(2019,03,01),
+            'fechaEmision': new Date("2019-03-01"),
             'importeTotal': 56.32
         }
     ]
@@ -92,15 +92,15 @@ db.clientes.insert({
     'tipoDeCliente': 'residencial',
     'facturas': [
         {
-            'fechaEmision': new Date(2019,00,01),
+            'fechaEmision': new Date("2019-01-01"),
             'importeTotal': 90.50
         },
         {
-            'fechaEmision': new Date(2019,01,01),
+            'fechaEmision': new Date("2019-02-01"),
             'importeTotal': 78.60
         },
         {
-            'fechaEmision': new Date(2019,02,01),
+            'fechaEmision': new Date("2019-03-01"),
             'importeTotal': 56.32
         }
     ]
@@ -120,15 +120,15 @@ db.clientes.insert({
     'tipoDeCliente': 'residencial',
     'facturas': [
         {
-            'fechaEmision': new Date(2019,00,01),
+            'fechaEmision': new Date("2019-01-01"),
             'importeTotal': 102.50
         },
         {
-            'fechaEmision': new Date(2019,01,01),
+            'fechaEmision': new Date("2019-02-01"),
             'importeTotal': 130.60
         },
         {
-            'fechaEmision': new Date(2019,02,01),
+            'fechaEmision': new Date("2019-03-01"),
             'importeTotal': 96
         }
     ]
@@ -186,7 +186,7 @@ db.clientes.update(
     { $push: 
         { facturas: 
             {
-                'fechaEmision': new Date(2019,03,01),
+                'fechaEmision': new Date("2019-03-01"),
                 'importeTotal': 85.50
             }
         }
@@ -205,52 +205,52 @@ db.clientes.update(
         { facturas: 
             { $each: [
                 {
-                    'fechaEmision': new Date(2019,00,01),
+                    'fechaEmision': new Date("2019-01-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,01,01),
+                    'fechaEmision': new Date("2019-02-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,02,01),
+                    'fechaEmision': new Date("2019-03-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,03,01),
+                    'fechaEmision': new Date("2019-04-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,04,01),
-                    'importeTotal': 360.75
-                },
-                {
-                    'fechaEmision': new Date(2019,05,01),
+                    'fechaEmision': new Date("2019-05-01"),
                     'importeTotal': 185.50
                 },
                 {
-                    'fechaEmision': new Date(2019,06,01),
+                    'fechaEmision': new Date("2019-06-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,07,01),
+                    'fechaEmision': new Date("2019-07-01"),
                     'importeTotal': 185.50
                 },
                 {
-                    'fechaEmision': new Date(2019,08,01),
+                    'fechaEmision': new Date("2019-08-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,09,01),
+                    'fechaEmision': new Date("2019-09-01"),
                     'importeTotal': 185.50
                 },
                 {
-                    'fechaEmision': new Date(2019,10,01),
+                    'fechaEmision': new Date("2019-10-01"),
                     'importeTotal': 360.75
                 },
                 {
-                    'fechaEmision': new Date(2019,11,01),
+                    'fechaEmision': new Date("2019-11-01"),
                     'importeTotal': 185.50
+                },
+                {
+                    'fechaEmision': new Date("2019-12-01"),
+                    'importeTotal': 360.75
                 }
             ] } 
         }
