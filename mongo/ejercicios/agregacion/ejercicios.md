@@ -276,6 +276,7 @@ db.clientes.aggregate( [
 
 Saca la facturación media de los clientes de residencial
 
+Media por cliente de un tipo concreto:
 ```javascript
 
 db.clientes.aggregate([
@@ -283,6 +284,15 @@ db.clientes.aggregate([
    { $project: { _id: "$cifNif", avg: { $avg: "$facturas.importeTotal"} } },
    { $sort : { total: 1 } }
 ])
+
+```
+
+Media por tipo de cliente
+```javascript
+
+db.clientes.aggregate([
+   { $match: { tipoDeCliente: 'residencial'} },
+   { $project: { _id: "tipoDeCliente", avg: { $avg: "$facturas.importeTotal"} } }
 
 ```
 
