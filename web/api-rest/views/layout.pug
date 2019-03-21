@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(id="menu")
+        ul
+            li
+                a(href="/")= "Inicio"
+            li
+                a(href="/about")= "About"
+            li
+                a(href="/users")= "Users"
+    block content
+  footer
+    p @footer 2019
