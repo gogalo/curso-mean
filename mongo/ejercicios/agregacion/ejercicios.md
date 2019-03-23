@@ -165,7 +165,6 @@ Mismo resultado ordenando por el total de mayor a menor
 ```javascript
 
 db.clientes.aggregate( [
-    
     { $group: {_id:"$cifNif",total:{$sum: {$sum: "$facturas.importeTotal"}}}},
     { $sort : { total : -1 }}
 ] )
