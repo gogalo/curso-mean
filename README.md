@@ -1,10 +1,9 @@
-## Curso MEAN javascript 
-------------------------
+## Curso MEAN 
+-------------
 
-# Javascript
+Cuso arquitectura MEAN, contenidos:
 
-Ejercicios javascript básicos, ejemplos de variables, funciones, objetos, classes ES6, modificación DOM y eventos.
-
-# Mongo
-
-Ejercicios crud ...
+- Javascript
+- MongoDb
+- NodeJs
+- Angular
