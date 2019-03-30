@@ -1,0 +1,201 @@
+swagger: "2.0"
+info:
+  description: "Ejemplo Api RESTFUL Libros"
+  version: "1.0.0"
+  title: "Libros RestFul"
+  termsOfService: "Terminos y condiciones"
+  contact:
+    email: "email@prueba.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:3000"
+basePath: "/v1/api"
+tags:
+- name: "libros"
+  description: "Todo sobre libros"
+  externalDocs:
+    description: "+ info"
+    url: "http://localhost:3000/v1/api/libros"
+schemes:
+- "http"
+paths:
+  /libros:
+    get:
+      tags:
+      - "libros"
+      summary: "Listado de libros"
+      description: "Retorna un listado de libros"
+      operationId: "getLibros"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/ApiSuccessArrayResponse"
+        400:
+          description: "Error"
+          schema:
+            $ref: "#/definitions/ApiError400Response"
+    post:
+      tags:
+      - "libros"
+      summary: "Nuevo Libro"
+      description: ""
+      operationId: "addLibro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto libro necesario para añadir uno nuevo"
+        required: true
+        schema:
+          $ref: "#/definitions/LibroSinID"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/ApiSuccessSingleResponse"
+  /libros/{isbn}:
+    get:
+      tags:
+      - "libros"
+      summary: "Buscar un libro por isbn"
+      description: "Retorna un unico libro por isbn"
+      operationId: "getLibroPorIsbn"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "isbn"
+        in: "path"
+        description: "ISBN del libro a buscar"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Libro"
+        400:
+          description: "ISBN no valido"
+        404:
+          description: "Libro no encontrado"
+    put:
+      tags:
+      - "libros"
+      summary: "Actualizar un libro existente"
+      description: ""
+      operationId: "updateLibro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "isbn"
+        in: "path"
+        description: "ISBN del libro a buscar"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Objeto libro necesario para poder modificar un Libro existente"
+        required: true
+        schema:
+          $ref: "#/definitions/LibroSinID"
+      responses:
+        400:
+          description: "ID no valido"
+        404:
+          description: "Libro no encontrado"
+    delete:
+      tags:
+      - "libros"
+      summary: "Borrar un libro determinado"
+      description: ""
+      operationId: "deleteLibro"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "isbn"
+        in: "path"
+        description: "ISBN del libro a borrar"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "ISBN no valido"
+        404:
+          description: "Libro no encontrado"
+definitions:
+  Libros:
+    type: "array"
+    items:
+      $ref: "#/definitions/Libro"
+    xml:
+      name: "Libros"
+  Libro:
+    type: "object"
+    properties:
+      _id:
+        type: "string"
+        example: "12312ejhfdkjkgjhfg"
+      isbn:
+        type: "string"
+        example: "1234567890123"
+      name:
+        type: "string"
+        example: "El señor de los anillos: El retorno del Rey"
+      author:
+        type: "string"
+        example: "J.R.R. Tolkien"
+      __v:
+        type: "integer"
+        example: 1
+    xml:
+      name: "Libro"
+  LibroSinID:
+    type: "object"
+    properties:
+      isbn:
+        type: "string"
+        example: "1234567890123"
+      name:
+        type: "string"
+        example: "El señor de los anillos: El retorno del Rey"
+      author:
+        type: "string"
+        example: "J.R.R. Tolkien"
+    xml:
+      name: "LibroSinId"
+  ApiSuccessArrayResponse:
+    type: "object"$ref: "#/definitions/Libros"
+    properties:
+      success:
+        type: "string"
+        example: "true"
+      data:
+        $ref: "#/definitions/Libros"
+  ApiSuccessSingleResponse:
+    type: "object"
+    properties:
+      success:
+        type: "string"
+        example: "true"
+      data:
+        $ref: "#/definitions/Libro"
+  ApiError400Response:
+    type: "object"
+    properties:
+      success:
+        type: "string"
+        example: "false"
+      error:
+        type: "string"
+        example: "400 Bad Request"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
