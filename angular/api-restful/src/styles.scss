@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+$material-icons-font-path: '~material-icons/iconfont/';
+ 
+@import '~material-icons/iconfont/material-icons.scss';
+
+.material-icons {
+    vertical-align: middle;
+}
+
+// LISTADOS
+///////////////////////////////////////////////////////7
+.header {
+    margin: 25px 0;
+
+    .header-actions {
+        padding: .75rem;
+    }
+
+}
+
+.table-actions {
+
+    button:not(:first-child) {
+        margin-left: 5px;
+    }
+}
+

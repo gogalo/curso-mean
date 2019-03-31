@@ -1,0 +1,38 @@
+<div class="header row">
+  <div class="col-8">
+      <h1>Listado de libros</h1>
+  </div>
+  <div class="header-actions col-4 text-right">
+      <a routerLink="/libros/add" type="buton" class="btn btn-info btn-sm">
+        <i class="material-icons">add</i><span class="aligned-with-icon"> Nuevo</span>
+      </a>
+  </div>                
+</div>
+
+<div class="row">    
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Author</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of libros">
+        <td>{{item.name}}</td>
+        <td>{{item.isbn}}</td>
+        <td>{{item.author}}</td>
+        <td class="table-actions text-right">
+          <button [routerLink]="['/libros/edit/', item.isbn]" type="button" class="btn btn-light btn-sm">
+              <i class="material-icons">edit</i>
+          </button>
+          <button [routerLink]="['/libros/delete/', item.isbn]" type="button" class="btn btn-danger btn-sm">
+              <i class="material-icons">delete</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
