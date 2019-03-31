@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/api-restful', { useNewUrlParser: true });
 
 //Get the default connection
 var db = mongoose.connection;
