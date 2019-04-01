@@ -1,0 +1,8 @@
+<form (submit)="add()">
+  <input type="text" [(ngModel)]="cadena" [ngModelOptions]="{standalone: true}" />
+  <input type="submit" value="Añadir" />  
+</form>
+
+<ul>
+  <li *ngFor="let item of cadenas">{{item}}</li>
+</ul>
