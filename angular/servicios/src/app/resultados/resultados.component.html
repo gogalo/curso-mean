@@ -1,0 +1,20 @@
+<h2>Mocked</h2>
+<ul>
+  <li *ngFor="let item of resultados">
+    <div>
+      <img width="60" src="assets/images/{{item.imagen}}" alt="{{item.nombre}}">
+      <h2>{{item.nombre}} ({{item.dipus}})</h2>
+    </div>
+  </li>
+</ul>
+
+<hr/>
+
+<h2>Api</h2>
+<ul>
+  <li *ngFor="let item of resultadosApi | async">
+   <div>
+    <img width="60" src="{{this.mediaPath}}/{{item.imagen}}" alt="{{item.nombre}}">
+    <h2>{{item.nombre}} ({{item.dipu}})</h2>
+  </div>
+</ul>
