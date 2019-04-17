@@ -2,9 +2,31 @@
 
 ### Listado de módulos:
 
-- Javascript: ejercicios varios
-- MongoDb: ejercicios crud, agregación e indices + directorio modeloDeDatos con el squema y algunos ejercicios para consutas realcionas con las colecciones _Publicaciones_ y _Usuarios_
-- NodeJs: ejercicios varios + swagger editor (docker-compose)
-- Angular: ejercicios varios
+- Javascript
+- Mongo
+- NodeJs
+- Angular
 
-_El contenido de los directorios son los ejercicios propuestos durante el curso_
+
+### Ejercicios a entregar en el curso
+
+#### Javascript:
+- 1-2 (_Directorio Javascript_)
+- 5 repaso (_Directorio Javascript_)
+- previos 6 (_Directorio Javascript_)
+- previo 11 (_Directorio Javascript_)
+- preparatorio 17 (_Directorio Javascript_)
+
+#### MongoDB:
+- Unidad 3 (_Directorio mongo_)
+- Unidad 4 (_Directorio mongo_)
+- Unidad 5 (_Directorio mongo_)
+
+#### NodeJS/Express:
+- Basicos unidad 5 (_Directorio NodeJs_)
+- Unidad 6 (_Directorio NodeJs_)
+
+#### Angular:
+- Unidad 2 (_Directorio Angular_)
+- Unidad 3 (_Directorio Angular_)
+- Unidad 4 (_Directorio Angular_)
